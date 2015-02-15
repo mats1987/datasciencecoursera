@@ -13,7 +13,7 @@ complete <- function(directory, id = 1:332) {
                 
         
                 
-                newrow <- data.frame(id = id[j], nobs = nrow(dat[!complete.cases(dat) & dat$ID == id[j],]))
+                newrow <- data.frame(id = id[j], nobs = nrow(dat[complete.cases(dat) & dat$ID == id[j],]))
                 completed_cases <- rbind(completed_cases,newrow)
                 
                 
